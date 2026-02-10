@@ -1,0 +1,9 @@
+# Use this DB Query in RDS to Flush Privileges in order to avoid the below error from Lambda function
+          {
+            "statusCode": 500,
+            "body": "Error: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods"
+          }
+
+
+ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'Hseran231609';
+FLUSH PRIVILEGES;
